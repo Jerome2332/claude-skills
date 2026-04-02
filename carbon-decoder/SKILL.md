@@ -633,19 +633,3 @@ Before marking a decoder complete:
 - [ ] Unit tests added using `carbon-test-utils` with real transaction fixtures
 
 ---
-
-## Scope-Specific: Existing Carbon Integration
-
-Scope uses Carbon for transaction parsing in the streaming pipeline. The relevant decoders and integration points are in:
-
-- `apps/api/src/lib/helius-laserstream-client.ts` — raw transaction bytes flow into the carbon parse layer
-- `apps/api/src/services/scope/stream-source-factory.ts` — routes to correct decoder based on program ID
-- `apps/api/src/lib/triton-transaction-parser.ts` — legacy parser (Triton fallback path)
-- `apps/api/src/lib/dex-swap-parser.ts` — DEX swap events from parsed Carbon output
-
-When adding a new program decoder for Scope:
-1. Build the crate under `decoders/<program>-decoder/`
-2. Add it as a workspace member in root `Cargo.toml`
-3. Wire it into `stream-source-factory.ts` via the `instruction_decoder_collection_fast!` macro
-4. Add a contract doc to `docs/api-contracts/` before integrating external API calls
-5. Capture a fixture transaction and add a unit test in `apps/api/__tests__/`

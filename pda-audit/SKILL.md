@@ -123,16 +123,7 @@ Search for:
 
 Also search for hardcoded PDA results (strings that are expected PDA addresses used as constants) — these bypass derivation entirely and should be flagged for verification.
 
-### Step 2: Focus on the Scope Project's Key Files
-
-Pay particular attention to:
-- `apps/web/src/` — any client-side PDA derivation for bonding curves or ATAs
-- `apps/api/src/services/trading/swap.service.ts` — ATA creation for swaps
-- `apps/api/src/lib/triton-transaction-parser.ts` — any PDA re-derivation for verification
-- `apps/api/src/services/data/token-metadata.service.ts` — Metaplex metadata PDA derivation
-- Any file that derives ATAs — must handle Token 2022 mints correctly
-
-### Step 3: Verify Each Derivation
+### Step 2: Verify Each Derivation
 
 For each derivation call found:
 1. What PDA type is being derived? (ATA, metadata, bonding curve, etc.)

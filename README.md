@@ -7,7 +7,6 @@ Custom skills for Claude Code built for my Solana development, security auditing
 | Skill | Description |
 |-------|-------------|
 | [solana-master](./solana-master) | Full-stack Solana dApp development with strict coding standards |
-| [pinocchio-development](./pinocchio-development) | Build high-performance Solana programs with Pinocchio (88-95% compute unit reduction) |
 | [carbon-decoder](./carbon-decoder) | Build Carbon framework decoders for Solana program indexing |
 | [borsh-schema-gen](./borsh-schema-gen) | Generate TypeScript Borsh codecs from Rust struct definitions |
 | [discriminator-verify](./discriminator-verify) | Verify Anchor instruction and account discriminators |
